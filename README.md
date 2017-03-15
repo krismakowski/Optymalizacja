@@ -1,2 +1,2 @@
 # Optymalizacja
-school
+This is a README file
