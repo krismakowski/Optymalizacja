@@ -52,6 +52,7 @@ def queens(n):
     mat=np.array(values).reshape(n,n).astype(int)
     return res,mat
 
+#comment added
 x,y=queens(10)
 np.set_printoptions(threshold=np.nan)
 print "Total number of queens=%d\n"%x
