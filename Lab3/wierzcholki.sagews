@@ -91,22 +91,16 @@ def solvelinear():
         mat=c[:,index_list[[k],:]].reshape(eq_no,-1)
         if(np.linalg.det(mat)!=0):
             x=np.linalg.solve(mat,b)
-        # print "Vector x:\n%s\n" %x
-        #print "Current set B:\n%s\n" %index_list[k]
             X=np.zeros(std_var_no)
             for l in range(0,eq_no):
                 X[index_list[k,l]]=x[l]
-            # print X
             temp=0
             if (X>=0).all()==True:
                 for u in range(0,std_var_no):
                     temp+=std_C[u]*X[u]
-                # print "temp=%d" %temp
                 if result<temp:
                     result=temp
                     std_resultant_vector=X
-                # print "result=%d" %result
-        # print mat
     for k in range(0,var_no):
         resultant_vector[k]=std_resultant_vector[2*k]
     return(result,resultant_vector)
