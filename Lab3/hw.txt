@@ -1,0 +1,34 @@
+import numpy as np
+import itertools as it
+from sympy import *
+import math
+
+x1,x2,x3=symbols("x1,x2,x3")
+expr=3*x1-7*x2+1
+fr=Poly(expr,x1,x2)
+fr
+# fr.all_monoms()
+def nCr(n,r):
+    f = math.factorial
+    return f(n) / f(r) / f(n-r)
+# n = raw_input('Podaj rozmiar szachownicy: ')
+
+var_no=6
+eq_no=4
+minor_no=nCr(var_no,eq_no)
+k=np.arange(var_no)
+index_list = np.array(list(it.combinations(k, eq_no)))
+print index_list
+a=np.zeros((eq_no,var_no)).astype(int)
+b=np.arange(24).reshape((4,6))
+print "Matrix b:\n%s\n\n" %b
+print index_list[[1],:]
+mat=b[:,index_list[[1],:]].reshape(eq_no,-1)
+print "Matrix mat:\n%s\n\n" %mat
+
+
+for k in range(0,minor_no):
+    mat=b[:,index_list[[k],:]].reshape(eq_no,-1)
+    # if(np.linalg.det(mat)!=0):
+                # x=np.linalg.solve(mat,b)
+    print mat
