@@ -1,5 +1,7 @@
 # Wierzcholki
 
+https://cloud.sagemath.com/projects/2ec581e9-e850-483f-b57b-47ac889bd121/files/wierzcholki.sagews
+
 Funkcja przeprowadzająca obliczenia - solvelinear()
 
 Funkcja obsługuje równania z współczynnikami będącymi liczbami całkowitymi.
